@@ -67,6 +67,7 @@ class _TodoListPageState extends State<TodoListPage> {
     deletedTaskPos = tasks.indexOf(task);
     setState(() {
       tasks.remove(task);
+      taskRepository.saveTaskList(tasks);
     });
 
     ScaffoldMessenger.of(context).clearSnackBars();
